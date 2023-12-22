@@ -1,0 +1,13 @@
+body{
+    margin: 0;
+}
+.container{
+    
+    width: 90%;
+}
+
+#myChart {
+    text-align: center;
+    width: 95%;
+    height: 100vh;
+}

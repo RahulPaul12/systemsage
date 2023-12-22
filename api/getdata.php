@@ -12,7 +12,7 @@ if(!$conn){
 }else{
     $sql = "SELECT * FROM `data` ORDER BY `time` DESC LIMIT 10";
     $result = $conn->query($sql);  
-
+  
     $data= array();
     if($result-> num_rows>0){
         while($row = $result->fetch_assoc()){
@@ -22,15 +22,14 @@ if(!$conn){
             );
     }}
     
-    $value= rand(1,100);
-    $sql2 = "INSERT INTO `data` (`value`) VALUES ($value) ";
-    $result2 = $conn->query($sql2);  
-    $conn->close(); 
+      $value = rand(1,100);
+      $slinsert = "INSERT INTO `data`(`value`) VALUES ('$value')";
+     $result1= $conn->query($slinsert);
+     
+      $conn->close();
     header('Content-Type: application/json');
     echo json_encode($data);
-      
+    
 }
-
-
 
 ?>
