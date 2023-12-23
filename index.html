@@ -3,16 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-    <link rel="stylesheet" href="style/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Include JustGage library from CDN -->
+    
+    <script src="raphael.2.1.0.min.js"></script>
+    <script src="justgage.1.0.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/toorshia/justgage@1.4.0/justgage.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/toorshia/justgage@1.4.0/justgage.css">
     <title>Dashboard</title>
 </head>
 <body>
-    <div class="container">
-        <canvas id="myChart" width="400px"></canvas>
+    <div id="chartContainer">
+        <div class="chart">
+            <canvas id="lineChart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="barChart"></canvas>
+        </div>
+        <div class="chart">
+            <div id="gauge"></div>
+        </div>
     </div>
-    
-
 
     <script defer src="app/script.js"></script>
    

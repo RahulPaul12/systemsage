@@ -10,8 +10,14 @@ $conn = new mysqli($host,$user, $password, $db );
 if(!$conn){
     die("connection failed");
 }else{
-    $sql = "SELECT * FROM `data` ORDER BY `time` DESC LIMIT 10";
-    $result = $conn->query($sql);  
+
+    $value = rand(1,100);
+    $slinsert = "INSERT INTO `data`(`value`) VALUES ('$value')";
+    $result1= $conn->query($slinsert);
+
+    
+    $sqlget = "SELECT * FROM `data` ORDER BY `time` DESC LIMIT 10";
+    $result = $conn->query($sqlget);  
   
     $data= array();
     if($result-> num_rows>0){
@@ -22,9 +28,7 @@ if(!$conn){
             );
     }}
     
-      $value = rand(1,100);
-      $slinsert = "INSERT INTO `data`(`value`) VALUES ('$value')";
-     $result1= $conn->query($slinsert);
+     
      
       $conn->close();
     header('Content-Type: application/json');
